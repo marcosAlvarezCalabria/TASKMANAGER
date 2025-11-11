@@ -92,7 +92,7 @@ class TaskManager:
         try:
             with open(self.FILENAME, 'r') as file:
                 data = json.load(file)
-                self.tasks = [Task(item["id"], item["description"], item["completed"]) for item in data]
+                self.tasks = [Task(item["id"], item["description"], item["status"]) for item in data]
                 if self.tasks:
                     self.next_id = self.tasks[-1].id + 1 
                 else:
